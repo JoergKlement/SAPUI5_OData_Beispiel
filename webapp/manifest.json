@@ -1,0 +1,169 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sapui5.demo.odata",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"ES4Service": {
+				"uri": "/destinations/ES4/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"T19Service": {
+				"uri": "/destinations/T19/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"NorthwindService": {
+				"uri": "/destinations/Northwind/V3/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "sapui5.demo.odata.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"T19": {
+				"dataSource": "T19Service",
+				"settings": {
+					"useBatch": false,
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"Northwind": {
+				"dataSource": "NorthwindService",
+				"settings": {
+					"useBatch": false
+				}
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sapui5.demo.odata.i18n.i18n"
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sapui5.demo.odata.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "toStart",
+					"target": "start"
+				},
+				{
+					"pattern": "/create",
+					"name": "toCreate",
+					"target": "create"
+				},
+				{
+					"pattern": "/read",
+					"name": "toRead",
+					"target": "read"
+				},
+				{
+					"pattern": "/readDetail/{BusinessPartnerID}",
+					"name": "toReadDetail",
+					"target": "readDetail"
+				},
+				{
+					"pattern": "/update/{BusinessPartnerID}",
+					"name": "toUpdate",
+					"target": "update"
+				},
+				{
+					"pattern": "/delete",
+					"name": "toDelete",
+					"target": "delete"
+				}
+			],
+			"targets": {
+				"start": {
+					"viewName": "start",
+					"viewLevel": 1
+				},
+				"create": {
+					"viewName": "create",
+					"viewLevel": 2
+				},
+				"read": {
+					"viewName": "read",
+					"viewLevel": 2
+				},
+				"readDetail": {
+					"viewName": "readDetail",
+					"viewLevel": 3
+				},
+				"update": {
+					"viewName": "update",
+					"viewLevel": 4
+				},
+				"delete": {
+					"viewName": "delete",
+					"viewLevel": 4
+				},
+				"notFound": {
+					"viewName": "error",
+					"viewLevel": 2
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zsapui5odata01/webapp",
+		"_version": "1.1.0"
+	}
+}

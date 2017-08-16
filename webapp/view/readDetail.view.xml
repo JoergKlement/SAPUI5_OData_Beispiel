@@ -1,0 +1,45 @@
+<mvc:View 
+	controllerName="sapui5.demo.odata.controller.readDetail" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout"
+	xmlns:smartForm="sap.ui.comp.smartform" 
+	xmlns:smartLink="sap.ui.comp.navpopover"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<Page 
+		id="page" 
+		navButtonPress="onNavPress" 
+		showNavButton="true" 
+		title="{i18n>ReadDetailViewTitle}">
+		<content>
+			<Toolbar>
+				<ToolbarSpacer />
+				<Button id="updateButton" icon="sap-icon://edit" press="onUpdate"/>
+				<Button id="deleteButton" icon="sap-icon://delete" press="onDelete"/>
+			</Toolbar>
+			<layout:VerticalLayout class="sapUiResponsiveMargin">
+				<Label text="Business Partner ID" labelFor="inputBusinessPartnerID"/>
+				<Input id="inputBusinessPartnerID" value="{T19>BusinessPartnerID}" editable="false"/>
+				<Label text="Name" labelFor="inputCompanyName" editable="false"/>
+				<Input id="inputCompanyName" value="{T19>CompanyName}" editable="false"/>
+				<Label text="Postleitzahl" labelFor="inputPostalCode" editable="false"/>
+				<Input id="inputPostalCode" value="{T19>Address/PostalCode}" editable="false"/>
+				<Label text="Stadt" labelFor="inputCity" editable="false"/>
+				<Input id="inputCity" value="{T19>Address/City}" editable="false"/>
+				<Label text="Strasse" labelFor="inputStreet" editable="false"/>
+				<Input id="inputStreet" value="{T19>Address/Street}" editable="false"/>
+				<Label text="Land" labelFor="inputCountry" editable="false"/>
+				<Input id="inputCountry" value="{T19>Address/Country}" editable="false"/>
+				<Label text="URL" labelFor="inputWebAddress" editable="false"/>
+				<Input id="inputWebAddress" value="{T19>WebAddress}" editable="false"/>
+				<Label text="E-Mail" labelFor="inputEmailAddress" editable="false"/>
+				<Input id="inputEmailAddress" value="{T19>EmailAddress}" editable="false"/>
+				<Label text="Telefonnummer" labelFor="inputPhoneNumber" editable="false"/>
+				<Input id="inputPhoneNumber" value="{T19>PhoneNumber}" editable="false"/>
+				<Label text="Faxnummer" labelFor="inputFaxNumber" editable="false"/>
+				<Input id="inputFaxNumber" value="{T19>FaxNumber}" editable="false"/>
+			</layout:VerticalLayout>
+		
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,15 @@
+<mvc:View 
+	controllerName="sapui5.demo.odata.controller.error" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m">
+	<Page 
+		id="page" 
+		navButtonPress="onNavPress" 
+		showNavButton="true" 
+		title="{i18n>errorViewTitle}">
+		<content>
+			<Image src="webapp/image/404.jpg">
+			</Image>
+		</content>
+	</Page>
+</mvc:View>

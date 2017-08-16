@@ -1,0 +1,34 @@
+<mvc:View controllerName="sapui5.demo.odata.controller.create" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:smartfield="sap.ui.comp.smartfield" xmlns:smartform="sap.ui.comp.smartform" xmlns:layout="sap.ui.layout">
+	<Page id="page" navButtonPress="onNavPress" showNavButton="true" title="{i18n>createViewTitle}">
+		<content>
+			<Toolbar>
+				<ToolbarSpacer />
+				<Button id="saveButton" icon="sap-icon://save" press="onSave"/>
+				<Button id="cancelButton" icon="sap-icon://sys-cancel" press="onCancel"/>
+			</Toolbar>
+			<layout:VerticalLayout class="sapUiResponsiveMargin">
+				<Label text="Business Partner ID" labelFor="inputBusinessPartnerID"/>
+				<Input id="inputBusinessPartnerID" value="{T19>BusinessPartnerID}" editable="false"/>
+				<Label text="Name" labelFor="inputCompanyName"/>
+				<Input id="inputCompanyName" value="{T19>CompanyName}"/>
+				<Label text="Postleitzahl" labelFor="inputPostalCode"/>
+				<Input id="inputPostalCode" value="{T19>Address/PostalCode}"/>
+				<Label text="Stadt" labelFor="inputCity"/>
+				<Input id="inputCity" value="{T19>Address/City}"/>
+				<Label text="Strasse" labelFor="inputStreet"/>
+				<Input id="inputStreet" value="{T19>Address/Street}"/>
+				<Label text="Land" labelFor="inputCountry"/>
+				<Input id="inputCountry" value="{T19>Address/Country}"/>
+				<Label text="URL" labelFor="inputWebAddress"/>
+				<Input id="inputWebAddress" value="{T19>WebAddress}"/>
+				<Label text="E-Mail" labelFor="inputEmailAddress"/>
+				<Input id="inputEmailAddress" value="{T19>EmailAddress}"/>
+				<Label text="Telefonnummer" labelFor="inputPhoneNumber"/>
+				<Input id="inputPhoneNumber" value="{T19>PhoneNumber}"/>
+				<Label text="Faxnummer" labelFor="inputFaxNumber"/>
+				<Input id="inputFaxNumber" value="{T19>FaxNumber}"/>
+			</layout:VerticalLayout>
+		</content>
+	</Page>
+</mvc:View>
