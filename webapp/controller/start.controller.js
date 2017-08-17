@@ -15,11 +15,11 @@ sap.ui.define([
 		            var sId = aIdSplitted[1];				//Hole den Teil nach dem Trenner "--", welcher die Kachel ID ist
 		            switch (sId) {
     				case "createTile":
-        				oRouter.navTo("toCreate", {TileID : sId});
+        				oRouter.navTo("toCreate");
         				break;
     
     				case "readTile":
-        				oRouter.navTo("toRead", {TileID : sId});
+        				oRouter.navTo("toRead");
         				break;
 
     				default:

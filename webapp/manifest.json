@@ -105,27 +105,27 @@
 					"target": "start"
 				},
 				{
-					"pattern": "/create",
+					"pattern": "create",
 					"name": "toCreate",
 					"target": "create"
 				},
 				{
-					"pattern": "/read",
+					"pattern": "read",
 					"name": "toRead",
 					"target": "read"
 				},
 				{
-					"pattern": "/readDetail/{BusinessPartnerID}",
+					"pattern": "readDetail/{BusinessPartnerID}",
 					"name": "toReadDetail",
 					"target": "readDetail"
 				},
 				{
-					"pattern": "/update/{BusinessPartnerID}",
+					"pattern": "update/{BusinessPartnerID}",
 					"name": "toUpdate",
 					"target": "update"
 				},
 				{
-					"pattern": "/delete",
+					"pattern": "delete",
 					"name": "toDelete",
 					"target": "delete"
 				}
